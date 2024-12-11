@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="number"], input[type="password"], input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage">
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <br><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Inventory Page -->
+    <div id="inventoryPage" class="hidden">
+        <h1>Daily Inventory Report</h1>
+        <form id="inventoryForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>24" Dust Mop</td>
+                        <td><input type="number" name="dustMop24" value="30"></td>
+                    </tr>
+                    <tr>
+                        <td>36" Dust Mop</td>
+                        <td><input type="number" name="dustMop36" value="30"></td>
+                    </tr>
+                    <tr>
+                        <td>48" Dust Mop</td>
+                        <td><input type="number" name="dustMop48" value="30"></td>
+                    </tr>
+                    <tr>
+                        <td>Terry White</td>
+                        <td><input type="number" name="terryWhite" value="25000"></td>
+                    </tr>
+                    <tr>
+                        <td>Terry Pink</td>
+                        <td><input type="number" name="terryPink" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>White Micro</td>
+                        <td><input type="number" name="whiteMicro" value="6000"></td>
+                    </tr>
+                    <tr>
+                        <td>Grey Micro</td>
+                        <td><input type="number" name="greyMicro" value="1500"></td>
+                    </tr>
+                    <tr>
+                        <td>Orange Micro</td>
+                        <td><input type="number" name="orangeMicro" value="400"></td>
+                    </tr>
+                    <tr>
+                        <td>Red Shop</td>
+                        <td><input type="number" name="redShop" value="2000"></td>
+                    </tr>
+					<tr><td>BIB APRON  BLACK</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+					tr><td>STARBUCKS APRON </td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+					tr><td>WALMART </td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>BIB APRON-NAVY BLUE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>BIB APRON-WHITE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>BAKER PAD</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>FENDER COVER/34X57/ORANGE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>WAIST APRON-BLACK</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>BIB APRON-RED</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>SHP TWL FOLDED-RED</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+	tr><td>SHOP TOWEL RED </td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+	tr><td>WHITE SHOP TOWEL </td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+	tr><td>CAR WASH TOWEL </td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>WASH CLOTH</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>SM SHOP TWL - BLUE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>36" MICROFIBER DUST MOP</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>24OZ SYNTH WET MOP</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>WHITE MICROFIBR WIPE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>GLASS TOWEL-BLUE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>BLUE micro </td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>STRIPE GLASS TOWEL</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>RIBBED TERRY TOWEL</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>YELLOW MF KITCH TWL</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>micro GREEN</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>HAND TOWEL/16X27/WHT/GOLD</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+	tr><td>lg primium </td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>LINEN BAG</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>BATH TOWEL-WHITE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+    <tr><td>HUCK TOWEL/15X17/100CTTN/WHITE</td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td><td><input type="number" value="0"></td></tr>
+                </tbody>
+            </table>
+            <button type="button" onclick="sendData()">Send Data</button>
+        </form>
+    </div>
+
+    <script>
+    const credentials = {
+        username: "manager123",
+        password: "securepassword"
+    };
+
+    function login() {
+        const enteredUsername = document.getElementById('username').value;
+        const enteredPassword = document.getElementById('password').value;
+
+        if (enteredUsername === credentials.username && enteredPassword === credentials.password) {
+            document.getElementById('loginPage').classList.add('hidden');
+            document.getElementById('inventoryPage').classList.remove('hidden');
+            loadSavedData(); // Load saved data on successful login
+        } else {
+            alert("Invalid username or password. Please try again.");
+        }
+    }
+
+    function sendData() {
+        const formData = new FormData(document.getElementById('inventoryForm'));
+        const data = {};
+
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        // Save data to localStorage
+        localStorage.setItem('inventoryData', JSON.stringify(data));
+        alert('Data Saved Successfully!');
+    }
+
+    function loadSavedData() {
+        const savedData = localStorage.getItem('inventoryData');
+
+        if (savedData) {
+            const data = JSON.parse(savedData);
+
+            Object.keys(data).forEach(key => {
+                const inputElement = document.querySelector(`input[name="${key}"]`);
+                if (inputElement) {
+                    inputElement.value = data[key];
+                }
+            });
+        }
+    }
+
+    // Call loadSavedData() on page load to pre-fill the form
+    document.addEventListener('DOMContentLoaded', loadSavedData);
+</script>
+
+</html>
